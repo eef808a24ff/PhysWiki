@@ -11,10 +11,8 @@
 \usepackage{bm} % 用于矢量的粗体
 \usepackage{etoolbox}
 \setboolean{@twoside}{false} % 封面只占一面
-\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
 \usepackage{enumitem}  % \begin{enumerate}[resume] 可以接着之前的编号
 \usepackage{siunitx} % 单位
-\patchcmd{\thebibliography}{\chapter*}{\subsection}{}{} % 文献标题变为 subsection
 
 % 数学格式
 
@@ -44,7 +42,6 @@
 \newcommand{\bb}{\textbf} % 粗体
 \newcommand{\les}{\leqslant} % 小于等于号
 \newcommand{\ges}{\geqslant} % 大于等于号
-%\renewcommand\bibname{} % 修改参考文献列表的标题
 
 % 设置 Matlab 格式，用于MatlabStyle.tex
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
@@ -260,3 +257,5 @@ roundcorner=6pt}
 \numberwithin{table}{section}
 \renewcommand\thetable{\arabic{table}}
 \numberwithin{chapter}{part}
+
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref} % 这个包必须放在最后
