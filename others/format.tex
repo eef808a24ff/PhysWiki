@@ -1,4 +1,22 @@
-﻿% 数学格式
+﻿% 宏包和设置
+\documentclass[zihao=-4,openany,fancyhdr,UTF8]{ctexbook}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[final]{pdfpages}
+\usepackage{listings} % 代码排版
+\usepackage{bm} % 用于矢量的粗体
+\usepackage{etoolbox}
+\setboolean{@twoside}{false} % 封面只占一面
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
+\usepackage{enumitem}  % \begin{enumerate}[resume] 可以接着之前的编号
+\usepackage{siunitx} % 单位
+\patchcmd{\thebibliography}{\chapter*}{\subsection}{}{} % 文献标题变为 subsection
+
+% 数学格式
 
 %表示角度的圆圈直接用° （搜狗打du即可）
 %\newcommand{\abs}[1]{\left\lvert#1 \right\rvert} %定义绝对值 % physics 宏包已有
