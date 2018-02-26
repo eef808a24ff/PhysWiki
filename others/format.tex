@@ -14,7 +14,8 @@
 \usepackage{enumitem}  % \begin{enumerate}[resume] 可以接着之前的编号
 \usepackage{siunitx} % 单位
 \allowdisplaybreaks
-
+\usepackage[sectionbib]{natbib}
+\setcitestyle{numbers,square}
 % 数学格式
 
 %表示角度的圆圈直接用° （搜狗打du即可）
@@ -43,6 +44,7 @@
 \newcommand{\bb}{\textbf} % 粗体
 \newcommand{\les}{\leqslant} % 小于等于号
 \newcommand{\ges}{\geqslant} % 大于等于号
+\newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}}
 
 % 设置 Matlab 格式，用于MatlabStyle.tex
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
@@ -175,9 +177,9 @@ roundcorner=6pt}
 \setlength{\textfloatsep}{10pt \@plus3pt \@minus2pt}
 \def\@makechapterhead#1{%
   \null\vskip3.8cm\@tempskipa = \glueexpr \CTEX@chapter@beforeskip \relax
-  \ifodd \CTEX@chapter@fixbeforeskip
-    \CTEX@fixbeforeskip
-  \fi
+  %\ifodd \CTEX@chapter@fixbeforeskip
+  %  \CTEX@fixbeforeskip
+  %\fi
   \vspace*{\@tempskipa}%
   {\normalfont \parindent \dimexpr \CTEX@chapter@indent \relax
    \CTEX@chapter@format\centering
@@ -197,9 +199,9 @@ roundcorner=6pt}
   }}
 \def\@makeschapterhead#1{%
   \null\vskip-2.8cm\@tempskipa = \glueexpr \CTEX@chapter@beforeskip \relax
-  \ifodd \CTEX@chapter@fixbeforeskip
-    \CTEX@fixbeforeskip
-  \fi
+  %\ifodd \CTEX@chapter@fixbeforeskip
+   % \CTEX@fixbeforeskip
+  %\fi
   \vspace*{\@tempskipa}%
   {\normalfont \parindent \dimexpr \CTEX@chapter@indent \relax
    \CTEX@chapter@format
@@ -240,7 +242,7 @@ roundcorner=6pt}
 \renewcommand\upref[1]{\textsuperscript{\autopageref{#1}}}
 
 %\AtBeginEnvironment{example}{\normalsize} % 调整 example 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
-\newenvironment{exam}[1]{\begin{example}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{example}} 
+\newenvironment{exam}[1]{\begin{example}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{example}}
 \newenvironment{exer}[1]{\begin{exercise}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exercise}}
 % 调整字体字号
 
