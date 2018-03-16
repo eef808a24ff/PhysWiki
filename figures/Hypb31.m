@@ -1,0 +1,11 @@
+close all;
+a = 1; b = 0.7;
+y = linspace(-2.6,2.6,200);
+x = a*sqrt(1 + y.^2/b^2);
+plot(x,y);
+hold on;
+scatter(0,0,'.');
+scatter(sqrt(a^2 + b^2),0,'.');
+plot([0, a*5], [0, b*5]);
+plot([0, a*5], [0, -b*5]);
+axis equal;
