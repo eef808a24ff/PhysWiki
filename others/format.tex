@@ -58,8 +58,8 @@
 \definecolor{background}{RGB}{252,252,220}
 
 % 其他
-\newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
-\newcommand{\Entry}[2]{\section{#1}\label{#2}\input{./contents1/#2}}% 从 contents1 中加入词条（contents1 里面用于存放超出力学分册的内容）
+\newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents1/#2}}% 主程序中使用，从 contents 文件夹加入词条
+\newcommand{\Entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 从 contents1 中加入词条（contents1 里面用于存放超出力学分册的内容）
 \newcommand{\laserdog}[2]{\section{#1}\label{#2}\input{./laserdog/#2}}
 \newcommand{\Code}[1]{\subsubsection{#1.m}\input{./codes/#1}} % 插入代码（含标题）
 \newcommand{\code}[1]{\input{./codes/#1}} % 插入代码（不含标题）
