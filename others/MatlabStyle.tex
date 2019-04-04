@@ -11,10 +11,24 @@
     numberstyle={\tiny \color{gray}}, % 行号大小
     numbersep=11pt, % 行号距离
     backgroundcolor=\color{background}, % 背景颜色
-    emph=[1]{for,end,break},emphstyle=[1]\color{blue} % 指定单词高量
+    emph=[1]{for,end,break},emphstyle=[1]\color{blue} % 指定单词高亮
     %morekeywords={smooth} % 增加 keywords
      % 删除 keywords
 }
 
 % Matlab 代码环境
 \newcommand{\Matlab}{\begin{lstlisting}[language=Matlab, morekeywords={continue}, deletekeywords={rand, disp, error, nargin, flipud, fliplr, plot, axis, hold, roots, linspace, figure, title, sign, find, zeros, fzero, exp, format, sin, cos, tan, cot, asin, acos, atan, real, imag, sum, mean, diff, floor, ceil, sinh, cosh, tanh, round, ans, size, randn, eye, magic, fmin, sort, norm, num2str, pi, close, all}]}
+
+\lstdefinelanguage{plain}
+{
+  basicstyle= \ttfamily\zihao{5}, % 变量以外的符号
+    breaklines=true,%？  
+    keywordstyle=\color{\color{black}},% 关键字的颜色
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}}, %？ 
+    identifierstyle=\color{black},%？ 
+    stringstyle=\color{string}, % 字符串的颜色
+    commentstyle=\color{comment},% 注释的格式
+    showstringspaces=false,% 不显示空格符
+    numbers=none,
+    backgroundcolor=\color{background}, % 背景颜色
+}
