@@ -61,8 +61,8 @@
 \definecolor{error}{RGB}{230,0,0}
 \definecolor{background}{RGB}{252,252,220}
 
-\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1}} % 插入代码（含标题）
-\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1}} % 插入代码（不含标题）
+\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（含标题）
+\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（不含标题）
 
 % 其他
 \newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
