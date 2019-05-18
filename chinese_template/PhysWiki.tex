@@ -1,0 +1,22 @@
+\input{./others/format}
+
+\begin{document}
+
+\input{./others/MatlabStyle} % 设置 Matlab 颜色
+\begin{titlepage}
+\includepdf{./figures/frontcover.pdf}
+\newpage
+\includepdf{./figures/dedication.pdf}
+\end{titlepage}
+\frontmatter % 开始罗马数字页码
+\input{./contents/FrontMatters} % 版权声明&关于本书
+\setcounter{tocdepth}{1}
+\tableofcontents % 生成目录
+\mainmatter % 开始阿拉伯数字页码
+
+\part{数学}
+%=======================================
+\chapter{数学拾遗}
+\entry{二项式定理}{BiNor}
+
+\end{document}
