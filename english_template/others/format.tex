@@ -46,6 +46,15 @@
 \newcommand{\bb}{\textbf} % 粗体
 \newcommand{\les}{\leqslant} % 小于等于号
 \newcommand{\ges}{\geqslant} % 大于等于号
+\DeclareMathOperator*{\sumint}{% 求和加积分符号
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\newcommand{\link}[2]{\href{#2}{\color{blue}#1}} % 网址链接 \link{标题}{网址}
 \newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}}
 % \newcommand{\ecaption}[1]{Figure: } % 英文图片标题
 
