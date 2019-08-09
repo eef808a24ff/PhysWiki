@@ -151,7 +151,7 @@ roundcorner=6pt}
 {\thmname{#1}\thmnumber{ #2}\thmnote{\bf #3}\indent}  % 新增：最后一个{}
 \theoremstyle{mystyle}
 \newtheorem{examp}{\normalsize{例}}
-\newtheorem{exercise}{\normalsize{习题}}
+\newtheorem{exerc}{\normalsize{习题}}
 \newtheorem{Thm}{\normalsize{{定理}}}
 \newtheorem*{slove}{\normalsize{{【解】}}} % * 表示不编号！
 
@@ -233,7 +233,7 @@ roundcorner=6pt}
 \renewcommand{\tableautorefname}{表}
 \newcommand{\Exaautorefname}{例}
 \newcommand{\exampautorefname}{例}
-\newcommand{\exerciseautorefname}{习题}
+\newcommand{\exercautorefname}{习题}
 
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
@@ -250,8 +250,9 @@ roundcorner=6pt}
 
 %\AtBeginEnvironment{examp}{\normalsize} % 调整 examp 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
 \newenvironment{example}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
-\newenvironment{exam}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
-\newenvironment{exer}[1]{\begin{exercise}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exercise}}
+\newenvironment{exercise}[1]{\begin{exerc}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exerc}}
+\newenvironment{exer}[1]{\begin{exerc}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exerc}}
+
 % 调整字体字号
 
 % 新增结束
@@ -261,8 +262,8 @@ roundcorner=6pt}
 \renewcommand\theequation{\arabic{equation}}
 \numberwithin{examp}{section}
 \renewcommand\theexamp{\arabic{examp}}
-\numberwithin{exercise}{section}
-\renewcommand\theexercise{\arabic{exercise}}
+\numberwithin{exerc}{section}
+\renewcommand\theexerc{\arabic{exerc}}
 \numberwithin{figure}{section}
 \renewcommand\thefigure{\arabic{figure}}
 \numberwithin{table}{section}
