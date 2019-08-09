@@ -249,6 +249,7 @@ roundcorner=6pt}
 \renewcommand\upref[1]{\textsuperscript{\autopageref{#1}}}
 
 %\AtBeginEnvironment{examp}{\normalsize} % 调整 examp 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
+\newenvironment{example}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
 \newenvironment{exam}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
 \newenvironment{exer}[1]{\begin{exercise}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exercise}}
 % 调整字体字号
