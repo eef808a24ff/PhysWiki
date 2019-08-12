@@ -44,7 +44,6 @@
 \newcommand{\Arctan}{\operatorname{atan2}} % Arctan 函数
 \newcommand{\Si}[1]{\ \si{#1}} % 国际单位
 \newcommand{\x}{\texttt} % 代码字体
-\newcommand{\bb}{\textbf} % 粗体
 \newcommand{\les}{\leqslant} % 小于等于号
 \newcommand{\ges}{\geqslant} % 大于等于号
 \DeclareMathOperator*{\sumint}{% 求和加积分符号
@@ -76,9 +75,9 @@
 
 % 其他
 \newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
-\newcommand{\pentry}[1]{\begin{mdframed}\bb{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
-\newcommand{\rentry}[1]{\begin{mdframed}\bb{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
-\newcommand{\eentry}[1]{\begin{mdframed}\bb{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
+\newcommand{\pentry}[1]{\begin{mdframed}\textbf{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
+\newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
+\newcommand{\eentry}[1]{\begin{mdframed}\textbf{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
 
 % 淘宝模板其他设置
 \mdfsetup{%
