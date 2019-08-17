@@ -153,6 +153,9 @@ roundcorner=6pt}
 \newtheorem{examp}{\normalsize{例}}
 \newtheorem{exerc}{\normalsize{习题}}
 \newtheorem{defini}{\normalsize{定义}}
+\newtheorem{lemm}{\normalsize{引理}}
+\newtheorem{theor}{\normalsize{定理}}
+\newtheorem{corol}{\normalsize{推论}}
 
 \usepackage{indentfirst}
 \usepackage[pdfstartview=FitH,
@@ -233,7 +236,9 @@ roundcorner=6pt}
 \newcommand{\exampautorefname}{例}
 \newcommand{\exercautorefname}{习题}
 \newcommand{\definiautorefname}{定义}
-
+\newcommand{\lemmautorefname}{引理}
+\newcommand{\theorautorefname}{定理}
+\newcommand{\corolautorefname}{推论}
 
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
@@ -252,6 +257,9 @@ roundcorner=6pt}
 \newenvironment{example}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
 \newenvironment{exercise}[1]{\begin{exerc}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exerc}}
 \newenvironment{definition}[1]{\begin{defini}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{defini}}
+\newenvironment{lemma}[1]{\begin{lemm}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{lemm}}
+\newenvironment{theorem}[1]{\begin{theor}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{theor}}
+\newenvironment{corollary}[1]{\begin{corol}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{corol}}
 
 % 调整字体字号
 
@@ -266,6 +274,12 @@ roundcorner=6pt}
 \renewcommand\theexerc{\arabic{exerc}}
 \numberwithin{defini}{section}
 \renewcommand\thedefini{\arabic{defini}}
+\numberwithin{lemm}{section}
+\renewcommand\thelemm{\arabic{lemm}}
+\numberwithin{theor}{section}
+\renewcommand\thetheor{\arabic{theor}}
+\numberwithin{corol}{section}
+\renewcommand\thecorol{\arabic{corol}}
 \numberwithin{figure}{section}
 \renewcommand\thefigure{\arabic{figure}}
 \numberwithin{table}{section}
