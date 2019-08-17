@@ -152,9 +152,7 @@ roundcorner=6pt}
 \theoremstyle{mystyle}
 \newtheorem{examp}{\normalsize{例}}
 \newtheorem{exerc}{\normalsize{习题}}
-\newtheorem{Thm}{\normalsize{{定理}}}
-\newtheorem*{slove}{\normalsize{{【解】}}} % * 表示不编号！
-
+\newtheorem{defini}{\normalsize{定义}}
 
 \usepackage{indentfirst}
 \usepackage[pdfstartview=FitH,
@@ -234,6 +232,8 @@ roundcorner=6pt}
 \newcommand{\Exaautorefname}{例}
 \newcommand{\exampautorefname}{例}
 \newcommand{\exercautorefname}{习题}
+\newcommand{\definiautorefname}{定义}
+
 
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
@@ -251,6 +251,7 @@ roundcorner=6pt}
 %\AtBeginEnvironment{examp}{\normalsize} % 调整 examp 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
 \newenvironment{example}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
 \newenvironment{exercise}[1]{\begin{exerc}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exerc}}
+\newenvironment{definition}[1]{\begin{defini}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{defini}}
 
 % 调整字体字号
 
@@ -263,6 +264,8 @@ roundcorner=6pt}
 \renewcommand\theexamp{\arabic{examp}}
 \numberwithin{exerc}{section}
 \renewcommand\theexerc{\arabic{exerc}}
+\numberwithin{defini}{section}
+\renewcommand\thedefini{\arabic{defini}}
 \numberwithin{figure}{section}
 \renewcommand\thefigure{\arabic{figure}}
 \numberwithin{table}{section}
