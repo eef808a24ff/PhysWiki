@@ -54,7 +54,7 @@
   {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
 }
 
-\newcommand{\link}[2]{\href{#2}{\color{blue}#1}} % 网址链接 \link{标题}{网址}
+\newcommand{\link}[2]{\href{#2}{#1}} % 网址链接 \link{标题}{网址}
 \newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}} % 文献词条
 
 % 设置 Matlab 格式，用于MatlabStyle.tex
@@ -165,6 +165,7 @@ roundcorner=6pt}
             colorlinks, %注释掉此项则交叉引用为彩色边框(将colorlinks和pdfborder同时注释掉)
             pdfborder=001,   %注释掉此项则交叉引用为彩色边框
             linkcolor=blue-A700,
+            urlcolor = blue-A700,
             anchorcolor=blue-A700,
             citecolor=blue-A700]{hyperref}
 \setlength{\abovecaptionskip}{0pt}
