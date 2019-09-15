@@ -1,13 +1,12 @@
 ﻿% 宏包和设置
 % zihao 命令，小N号用 -N，大N号用 +N
 \documentclass[zihao=-4,openany,fancyhdr,UTF8]{ctexbook}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{physics}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{xcolor}
-\usepackage[framemethod=TikZ]{mdframed}
-\usepackage[final]{pdfpages}
+\usepackage{amsmath,amssymb,amsthm} % 美国数学协会
+\usepackage{physics} % 物理
+\usepackage{graphicx} % 图片
+\usepackage{xcolor} % 颜色控制
+\usepackage[framemethod=TikZ]{mdframed} % 框
+\usepackage[final]{pdfpages} % 页面插入 pdf
 \usepackage{listings} % 代码排版
 \usepackage{bm} % 用于矢量的粗体
 \usepackage{etoolbox}
@@ -68,8 +67,8 @@
 \definecolor{error}{RGB}{230,0,0}
 \definecolor{background}{RGB}{252,252,220}
 
-\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（含标题）
-\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（不含标题）
+\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（含标题）
+\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（不含标题）
 
 \newcommand{\Cpp}[1]{\subsubsection{#1}\lstinputlisting[language=cpp]{./codes/#1}}
 \newcommand{\cpp}[1]{\lstinputlisting[language=cpp]{./codes/#1}}
