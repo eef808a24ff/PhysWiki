@@ -1,13 +1,12 @@
 ﻿% 宏包和设置
 % zihao 命令，小N号用 -N，大N号用 +N
 \documentclass[zihao=-4,openany,fancyhdr,UTF8]{ctexbook}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{physics}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{xcolor}
-\usepackage[framemethod=TikZ]{mdframed}
-\usepackage[final]{pdfpages}
+\usepackage{amsmath,amssymb,amsthm} % 美国数学协会
+\usepackage{physics} % 物理
+\usepackage{graphicx} % 图片
+\usepackage{xcolor} % 颜色控制
+\usepackage[framemethod=TikZ]{mdframed} % 框
+\usepackage[final]{pdfpages} % 页面插入 pdf
 \usepackage{listings} % 代码排版
 \usepackage{bm} % 用于矢量的粗体
 \usepackage{etoolbox}
@@ -20,14 +19,12 @@
 % 数学格式
 
 %表示角度的圆圈直接用° （搜狗打du即可）
-%\newcommand{\abs}[1]{\left\lvert#1 \right\rvert} %定义绝对值 % physics 宏包已有
-\newcommand{\D}{\,\mathrm{d}} %微分算符正体
 \newcommand{\I}{\mathrm{i}} %虚数单位正体
 \newcommand{\E}{\mathrm{e}} %自然对数底整体
-\renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}%矢量用正体加粗字母, 大写也可以(电场) %只用 mathbf 对希腊字母没用
-\newcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}}   %矩阵用正体加粗字母, 小写也可以(泡利阵)
+\newcommand{\bvec}[1]{\boldsymbol{\mathbf{#1}}} %矢量用正体加粗字母, 大写也可以(电场) %只用 mathbf 对希腊字母没用
+\newcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}}   %矩阵用正体加粗字母, 小写也可以(泡利矩阵)
 \newcommand{\ten}[1]{\boldsymbol{\mathbf{#1}}} % 张量与矩阵相同
-\newcommand{\Nabla}{\vec\nabla}
+\newcommand{\Nabla}{\vec\nabla} % 粗体 nabla
 \renewcommand{\Tr}{^{\textup{T}}} %矩阵转置 % 覆盖 physics 宏包的 Trace
 \newcommand{\uvec}[1]{\hat{\boldsymbol{\mathbf{#1}}}} %单位矢量为黑体加 hat
 \renewcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}} % 矩阵圆括号, 覆盖 physics 宏包 (pauli matrix)
@@ -41,9 +38,10 @@
 \newcommand{\Her}{^\dagger} %厄米共轭
 \newcommand{\Q}[1]{\hat{#1}} % 量子力学算符
 \newcommand{\Qv}[1]{\uvec #1} % 量子力学矢量算符
+\newcommand{\opn}{\operatorname} % 算符与函数的简写
 \newcommand{\sinc}{\operatorname{sinc}} % sinc 函数
 \newcommand{\erfi}{\operatorname{erfi}} % erfi 函数
-\newcommand{\Arctan}{\mathop{\mathrm{Arctan}}} % Arctan 函数
+\newcommand{\Arctan}{\operatorname{Arctan}} % Arctan 函数
 \newcommand{\Si}[1]{\ \si{#1}} % 国际单位
 \newcommand{\x}{\texttt} % 代码字体
 \newcommand{\les}{\leqslant} % 小于等于号
@@ -56,8 +54,7 @@
   {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
 }
 
-\newcommand{\link}[2]{\href{#2}{\color{blue}#1}} % 网址链接 \link{标题}{网址}
-\newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}}
+\newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}} % 文献词条
 
 % 设置 Matlab 格式，用于MatlabStyle.tex
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
@@ -69,14 +66,16 @@
 \definecolor{error}{RGB}{230,0,0}
 \definecolor{background}{RGB}{252,252,220}
 
-\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（含标题）
-\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入代码（不含标题）
+\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（含标题）
+\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（不含标题）
+
+\newcommand{\Cpp}[1]{\subsubsection{#1}\lstinputlisting[language=cpp]{./codes/#1}}
+\newcommand{\cpp}[1]{\lstinputlisting[language=cpp]{./codes/#1}}
 
 % 其他
 \newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
-\newcommand{\laserdog}[2]{\section{#1}\label{#2}\input{./laserdog/#2}}
 \newcommand{\pentry}[1]{\begin{mdframed}\textbf{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
-\newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式（不推荐使用，可以考虑给出网页树状图的链接）
+\newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
 \newcommand{\eentry}[1]{\begin{mdframed}\textbf{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
 
 % 淘宝模板其他设置
@@ -99,7 +98,7 @@ roundcorner=6pt}
   {\CJKfontspec{SimHei}}
 \renewcommand{\kaishu}
   {\CJKfontspec{KaiTi}}
-\renewcommand{\youyuan}
+%\renewcommand{\youyuan}
   % {\CJKfontspec{YouYuan}}
 % \renewcommand{\fangsong}
   % {\CJKfontspec{FangSong}}
@@ -149,11 +148,12 @@ roundcorner=6pt}
 \newtheoremstyle{mystyle}{8pt}{8pt}{}{}{\bfseries}{}{\newline}
 {\thmname{#1}\thmnumber{ #2}\thmnote{\bf #3}\indent}  % 新增：最后一个{}
 \theoremstyle{mystyle}
-\newtheorem{example}{\normalsize{例}}
-\newtheorem{exercise}{\normalsize{习题}}
-\newtheorem{Thm}{\normalsize{{定理}}}
-\newtheorem*{slove}{\normalsize{{【解】}}} % * 表示不编号！
-
+\newtheorem{examp}{\normalsize{例}}
+\newtheorem{exerc}{\normalsize{习题}}
+\newtheorem{defini}{\normalsize{定义}}
+\newtheorem{lemm}{\normalsize{引理}}
+\newtheorem{theor}{\normalsize{定理}}
+\newtheorem{corol}{\normalsize{推论}}
 
 \usepackage{indentfirst}
 \usepackage[pdfstartview=FitH,
@@ -164,6 +164,7 @@ roundcorner=6pt}
             colorlinks, %注释掉此项则交叉引用为彩色边框(将colorlinks和pdfborder同时注释掉)
             pdfborder=001,   %注释掉此项则交叉引用为彩色边框
             linkcolor=blue-A700,
+            urlcolor = blue-A700,
             anchorcolor=blue-A700,
             citecolor=blue-A700]{hyperref}
 \setlength{\abovecaptionskip}{0pt}
@@ -231,8 +232,12 @@ roundcorner=6pt}
 \renewcommand{\figureautorefname}{图}
 \renewcommand{\tableautorefname}{表}
 \newcommand{\Exaautorefname}{例}
-\newcommand{\exampleautorefname}{例}
-\newcommand{\exerciseautorefname}{习题}
+\newcommand{\exampautorefname}{例}
+\newcommand{\exercautorefname}{习题}
+\newcommand{\definiautorefname}{定义}
+\newcommand{\lemmautorefname}{引理}
+\newcommand{\theorautorefname}{定理}
+\newcommand{\corolautorefname}{推论}
 
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
@@ -247,9 +252,14 @@ roundcorner=6pt}
 \newcommand{\exref}[1]{\autoref{#1}}
 \renewcommand\upref[1]{\textsuperscript{\autopageref{#1}}}
 
-%\AtBeginEnvironment{example}{\normalsize} % 调整 example 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
-\newenvironment{exam}[1]{\begin{example}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{example}}
-\newenvironment{exer}[1]{\begin{exercise}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exercise}}
+%\AtBeginEnvironment{examp}{\normalsize} % 调整 examp 环境字号（标题也会受影响！不能用！），不能调整字体！ 以下定义 exam 环境，以后一律使用 exam 环境！
+\newenvironment{example}[1]{\begin{examp}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{examp}}
+\newenvironment{exercise}[1]{\begin{exerc}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{exerc}}
+\newenvironment{definition}[1]{\begin{defini}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{defini}}
+\newenvironment{lemma}[1]{\begin{lemm}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{lemm}}
+\newenvironment{theorem}[1]{\begin{theor}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{theor}}
+\newenvironment{corollary}[1]{\begin{corol}[\;\; #1]\kaishu\hspace*{1.7em}}{\end{corol}}
+
 % 调整字体字号
 
 % 新增结束
@@ -257,10 +267,18 @@ roundcorner=6pt}
 % 编号在每个 section 内从 1 开始
 \numberwithin{equation}{section}
 \renewcommand\theequation{\arabic{equation}}
-\numberwithin{example}{section}
-\renewcommand\theexample{\arabic{example}}
-\numberwithin{exercise}{section}
-\renewcommand\theexercise{\arabic{exercise}}
+\numberwithin{examp}{section}
+\renewcommand\theexamp{\arabic{examp}}
+\numberwithin{exerc}{section}
+\renewcommand\theexerc{\arabic{exerc}}
+\numberwithin{defini}{section}
+\renewcommand\thedefini{\arabic{defini}}
+\numberwithin{lemm}{section}
+\renewcommand\thelemm{\arabic{lemm}}
+\numberwithin{theor}{section}
+\renewcommand\thetheor{\arabic{theor}}
+\numberwithin{corol}{section}
+\renewcommand\thecorol{\arabic{corol}}
 \numberwithin{figure}{section}
 \renewcommand\thefigure{\arabic{figure}}
 \numberwithin{table}{section}
