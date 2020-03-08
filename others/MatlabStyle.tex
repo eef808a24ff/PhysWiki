@@ -67,3 +67,8 @@
     numbers=left,
     numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
 }
+
+% 修改 \verb|...| 的默认字体和颜色
+\makeatletter 
+  \renewcommand\verbatim@font{\normalfont\ttfamily\color{comment}}
+\makeatother
