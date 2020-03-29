@@ -65,7 +65,7 @@
 \definecolor{background}{RGB}{252,252,220}
 
 % 其他
-\newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
+\newcommand{\entry}[2]{\section{#1}\phantomsection\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
 \newcommand{\pentry}[1]{\begin{mdframed}\textbf{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
 \newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
 \newcommand{\eentry}[1]{\begin{mdframed}\textbf{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
@@ -81,21 +81,16 @@ roundcorner=6pt}
 \usepackage{xeCJK}
 \usepackage[papersize={185mm,260mm},hmargin=2.1cm,vmargin=1in]{geometry}
 %%%%%%%%%%%%% 有需要可以自行调用字体
-\setCJKmainfont
-  [ItalicFont=KaiTi,
-  BoldFont=SimHei]
-  {SimSun}
+\setCJKmainfont[ItalicFont=KaiTi, BoldFont=SimHei]{SimSun}
 \setCJKsansfont{SimHei}
-\renewcommand{\heiti}
-  {\CJKfontspec{SimHei}}
-\renewcommand{\kaishu}
-  {\CJKfontspec{KaiTi}}
+\renewcommand{\heiti}{\CJKfontspec{SimHei}}
+\renewcommand{\kaishu}{\CJKfontspec{KaiTi}}
 %\renewcommand{\youyuan}
   % {\CJKfontspec{YouYuan}}
 % \renewcommand{\fangsong}
   % {\CJKfontspec{FangSong}}
 
-\setmainfont{Times New Roman}
+% \setmainfont{Times New Roman} % 会导致 texlive 2019 编译时 \hbar 显示错误
 \setsansfont{Arial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titletoc}
