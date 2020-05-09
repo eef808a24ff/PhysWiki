@@ -60,7 +60,34 @@
     morecomment=[s]{/*}{*/},
     commentstyle=\color{comment},
     % string
-    morestring=[m]',
+    morestring=[m]', % 未完成
+    stringstyle=\color{string},
+    showstringspaces=false,
+    % line numbers
+    numbers=left,
+    numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
+}
+
+% 用于 \lstlisting 和 \lstinputlisting 显示 m 文件
+\lstdefinelanguage{python}
+{
+    basicstyle= \ttfamily\zihao{5}, % 基本字体
+    backgroundcolor=\color{background}, % 背景颜色
+    breaklines=true, % 自动换行
+    % 边框
+    frame=single,
+    framerule=0.2mm, % 粗细
+    rulecolor=\color{gray}, % 线条颜色
+    % keyword
+    morekeywords={and, as, assert, break, class, continue, def, del, elif, else, except, False, finally, for, from, global, if, import, in, is, lambda, None, nonlocal, not, or, pass, raise, return, True, try, while, with, yield},
+    keywordstyle=\color{blue}\textbf,
+   % 未完成： 可以将 keyword 分组， 用不同颜色高亮， 将 cpp 本身的 keyword 分为第一组， 用户定义的类型分为第二组
+    % comment
+    morecomment=[l]{\#},
+    morecomment=[s]{"""}{"""},
+    commentstyle=\color{comment},
+    % string
+    morestring=[m]', % 未完成
     stringstyle=\color{string},
     showstringspaces=false,
     % line numbers
