@@ -68,7 +68,7 @@
     numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
 }
 
-% 用于 \lstlisting 和 \lstinputlisting 显示 m 文件
+% 用于 \lstlisting 和 \lstinputlisting 显示 python 代码
 \lstdefinelanguage{python}
 {
     basicstyle= \ttfamily\zihao{5}, % 基本字体
@@ -85,6 +85,84 @@
     % comment
     morecomment=[l]{\#},
     morecomment=[s]{"""}{"""},
+    commentstyle=\color{comment},
+    % string
+    morestring=[m]', % 未完成
+    stringstyle=\color{string},
+    showstringspaces=false,
+    % line numbers
+    numbers=left,
+    numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
+}
+
+% 用于 \lstlisting 和 \lstinputlisting 显示 makefile 代码
+\lstdefinelanguage{makefile}
+{
+    basicstyle= \ttfamily\zihao{5}, % 基本字体
+    backgroundcolor=\color{background}, % 背景颜色
+    breaklines=true, % 自动换行
+    % 边框
+    frame=single,
+    framerule=0.2mm, % 粗细
+    rulecolor=\color{gray}, % 线条颜色
+    % keyword
+    morekeywords={goal, include},
+    keywordstyle=\color{blue}\textbf,
+   % 未完成： 可以将 keyword 分组， 用不同颜色高亮， 将 cpp 本身的 keyword 分为第一组， 用户定义的类型分为第二组
+    % comment
+    morecomment=[l]{\#},
+    commentstyle=\color{comment},
+    % string
+    morestring=[m]', % 未完成
+    stringstyle=\color{string},
+    showstringspaces=false,
+    % line numbers
+    numbers=left,
+    numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
+}
+
+% 用于 \lstlisting 和 \lstinputlisting 显示 latex 代码
+\lstdefinelanguage{latex}
+{
+    basicstyle= \ttfamily\zihao{5}, % 基本字体
+    backgroundcolor=\color{background}, % 背景颜色
+    breaklines=true, % 自动换行
+    % 边框
+    frame=single,
+    framerule=0.2mm, % 粗细
+    rulecolor=\color{gray}, % 线条颜色
+    % keyword
+    morekeywords={documentclass, usepackage, begin, end},
+    keywordstyle=\color{blue}\textbf,
+   % 未完成： 可以将 keyword 分组， 用不同颜色高亮， 将 cpp 本身的 keyword 分为第一组， 用户定义的类型分为第二组
+    % comment
+    morecomment=[l]{\#},
+    commentstyle=\color{comment},
+    % string
+    morestring=[m]', % 未完成
+    stringstyle=\color{string},
+    showstringspaces=false,
+    % line numbers
+    numbers=left,
+    numberstyle={\ttfamily\zihao{-5}\color{gray}}, % 行号大小
+}
+
+% 用于 \lstlisting 和 \lstinputlisting 显示 bash 代码
+\lstdefinelanguage{bash}
+{
+    basicstyle= \ttfamily\zihao{5}, % 基本字体
+    backgroundcolor=\color{background}, % 背景颜色
+    breaklines=true, % 自动换行
+    % 边框
+    frame=single,
+    framerule=0.2mm, % 粗细
+    rulecolor=\color{gray}, % 线条颜色
+    % keyword
+    morekeywords={cd, pwe, echo, cat, git, ls, mount, umount, df, du},
+    keywordstyle=\color{blue}\textbf,
+   % 未完成： 可以将 keyword 分组， 用不同颜色高亮， 将 cpp 本身的 keyword 分为第一组， 用户定义的类型分为第二组
+    % comment
+    morecomment=[l]{\#},
     commentstyle=\color{comment},
     % string
     morestring=[m]', % 未完成
