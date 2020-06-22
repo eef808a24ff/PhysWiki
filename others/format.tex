@@ -15,6 +15,7 @@
 \usepackage{siunitx} % 单位
 \usepackage{mathrsfs} % 使用 \mathscr 花体字母
 \usepackage{newtxtext}
+\usepackage{lipsum}
 \allowdisplaybreaks
 \usepackage[sectionbib]{natbib}
 \setcitestyle{numbers,square}
@@ -229,6 +230,9 @@ roundcorner=6pt}
 \newcommand{\theorautorefname}{定理}
 \newcommand{\corolautorefname}{推论}
 
+\renewcommand{\subsectionautorefname}{第}
+\renewcommand{\thesubsection}{\arabic{subsection}节}
+
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
   \leavevmode
@@ -276,3 +280,9 @@ roundcorner=6pt}
 \numberwithin{chapter}{part}
 
 \usepackage[capitalize,nameinlink,noabbrev]{cleveref} % 这个包必须放在最后
+
+% lstlisting环境设置
+\renewcommand{\lstlistingname}{代码}
+\makeatletter
+\@addtoreset{lstlisting}{section}
+\makeatother
