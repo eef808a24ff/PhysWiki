@@ -168,6 +168,7 @@ roundcorner=6pt}
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 \makeatletter
+\patchcmd{\tableofcontents}{\@starttoc{toc}}{\pdfbookmark[1]{目录}{anchor}\@starttoc{toc}}{}{}
 \setlength{\@fptop}{5pt}
 \setlength{\floatsep}{10pt \@plus3pt \@minus1pt}
 \setlength{\intextsep}{12pt \@plus3pt \@minus2pt}
