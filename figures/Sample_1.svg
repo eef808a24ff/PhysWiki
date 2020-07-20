@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 330 257" style="enable-background:new 0 0 330 257;" xml:space="preserve">
+	 viewBox="-135 274.5 320.5 245.5" style="enable-background:new -135 274.5 320.5 245.5;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#A7A9AC;stroke:#000000;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
-<rect id="XMLID_1_" x="5.4285712" y="6.9285712" class="st0" width="319.6428528" height="244.6428528"/>
-<line id="XMLID_2_" class="st1" x1="5.4285712" y1="6.9285712" x2="325.0714417" y2="251.5714264"/>
-<line id="XMLID_3_" class="st1" x1="325.0714417" y1="6.9285712" x2="5.4285712" y2="251.5714264"/>
-<line id="XMLID_4_" class="st1" x1="5.4285712" y1="129.25" x2="325.0714417" y2="129.25"/>
-<line id="XMLID_5_" class="st1" x1="165.25" y1="6.9285712" x2="165.25" y2="251.5714264"/>
+<rect id="XMLID_1_" x="-134.6" y="274.9" class="st0" width="319.6" height="244.6"/>
+<line id="XMLID_2_" class="st1" x1="-134.6" y1="274.9" x2="185.1" y2="519.6"/>
+<line id="XMLID_3_" class="st1" x1="185.1" y1="274.9" x2="-134.6" y2="519.6"/>
+<line id="XMLID_4_" class="st1" x1="-134.6" y1="397.3" x2="185.1" y2="397.3"/>
+<line id="XMLID_5_" class="st1" x1="25.3" y1="274.9" x2="25.3" y2="519.6"/>
 <g id="XMLID_6_">
-	<path id="XMLID_8_" d="M148.8339844,147.0410156l-9.449707,28.78125h-12.1494141l30.9135742-91.5009766h14.1743164
-		l31.0488281,91.5009766h-12.5546875l-9.7192383-28.78125H148.8339844z M178.6674805,137.8095703l-8.909668-26.3369141
-		c-2.0249023-5.9726563-3.3745117-11.4033203-4.7246094-16.6982422h-0.2700195
-		c-1.3500977,5.4306641-2.8349609,10.9970703-4.5898438,16.5625l-8.909668,26.4726563H178.6674805z"/>
+	<path id="XMLID_8_" d="M8.8,415l-9.4,28.8h-12.1l30.9-91.5h14.2l31,91.5H50.8L41.1,415H8.8z M38.7,405.8l-8.9-26.3
+		c-2-6-3.4-11.4-4.7-16.7h-0.3c-1.4,5.4-2.8,11-4.6,16.6l-8.9,26.5H38.7z"/>
 </g>
 <g id="XMLID_7_">
 </g>
