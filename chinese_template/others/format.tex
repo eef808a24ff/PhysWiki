@@ -13,6 +13,9 @@
 \setboolean{@twoside}{false} % 封面只占一面
 \usepackage{enumitem}  % \begin{enumerate}[resume] 可以接着之前的编号
 \usepackage{siunitx} % 单位
+\usepackage{mathrsfs} % 使用 \mathscr 花体字母
+\usepackage{newtxtext} % 字体
+\usepackage{lipsum}
 \allowdisplaybreaks
 \usepackage[sectionbib]{natbib}
 \setcitestyle{numbers,square}
@@ -25,6 +28,7 @@
 \newcommand{\mat}[1]{\boldsymbol{\mathbf{#1}}}   %矩阵用正体加粗字母, 小写也可以(泡利矩阵)
 \newcommand{\ten}[1]{\boldsymbol{\mathbf{#1}}} % 张量与矩阵相同
 \newcommand{\Nabla}{\bvec\nabla} % 粗体 nabla
+%\renewcommand{\laplacian}{\bvec{\nabla}^2} % 粗体拉普拉斯算符， 覆盖 physics 宏包
 \renewcommand{\Tr}{^{\textup{T}}} %矩阵转置 % 覆盖 physics 宏包的 Trace
 \newcommand{\uvec}[1]{\hat{\boldsymbol{\mathbf{#1}}}} %单位矢量为黑体加 hat
 \renewcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}} % 矩阵圆括号, 覆盖 physics 宏包 (pauli matrix)
@@ -43,7 +47,6 @@
 \newcommand{\erfi}{\operatorname{erfi}} % erfi 函数
 \newcommand{\Arctan}{\operatorname{Arctan}} % Arctan 函数
 \newcommand{\Si}[1]{\ \si{#1}} % 国际单位
-\newcommand{\x}{\texttt} % 代码字体
 \DeclareMathOperator*{\sumint}{% 求和加积分符号
 \mathchoice%
   {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
@@ -52,7 +55,7 @@
   {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
 }
 
-\newcommand{\bibentry}[1]{　\\ \vspace{-0.34cm}\input{./bibliographies/#1}} % 文献词条
+\newcommand{\bibli}{　\\ \vspace{-0.34cm}\input{bibliography}} % 文献词条
 
 % 设置 Matlab 格式，用于MatlabStyle.tex
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
@@ -64,14 +67,8 @@
 \definecolor{error}{RGB}{230,0,0}
 \definecolor{background}{RGB}{252,252,220}
 
-\newcommand{\Code}[1]{\subsubsection{#1.m}\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（含标题）
-\newcommand{\code}[1]{\lstinputlisting[language=MyMatlab]{./codes/#1.m}} % 插入 Matlab 代码（不含标题）
-
-\newcommand{\Cpp}[1]{\subsubsection{#1}\lstinputlisting[language=cpp]{./codes/#1}}
-\newcommand{\cpp}[1]{\lstinputlisting[language=cpp]{./codes/#1}}
-
 % 其他
-\newcommand{\entry}[2]{\section{#1}\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
+\newcommand{\entry}[2]{\section{#1}\phantomsection\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
 \newcommand{\pentry}[1]{\begin{mdframed}\textbf{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
 \newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
 \newcommand{\eentry}[1]{\begin{mdframed}\textbf{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
@@ -87,21 +84,15 @@ roundcorner=6pt}
 \usepackage{xeCJK}
 \usepackage[papersize={185mm,260mm},hmargin=2.1cm,vmargin=1in]{geometry}
 %%%%%%%%%%%%% 有需要可以自行调用字体
-\setCJKmainfont
-  [ItalicFont=KaiTi,
-  BoldFont=SimHei]
-  {SimSun}
+\setCJKmainfont[ItalicFont=KaiTi, BoldFont=SimHei]{SimSun}
 \setCJKsansfont{SimHei}
-\renewcommand{\heiti}
-  {\CJKfontspec{SimHei}}
-\renewcommand{\kaishu}
-  {\CJKfontspec{KaiTi}}
+\renewcommand{\heiti}{\CJKfontspec{SimHei}}
+\renewcommand{\kaishu}{\CJKfontspec{KaiTi}}
 %\renewcommand{\youyuan}
   % {\CJKfontspec{YouYuan}}
 % \renewcommand{\fangsong}
   % {\CJKfontspec{FangSong}}
 
-\setmainfont{Times New Roman}
 \setsansfont{Arial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titletoc}
@@ -176,6 +167,7 @@ roundcorner=6pt}
 \renewcommand{\bottomfraction}{0.65}
 \renewcommand{\floatpagefraction}{0.60}
 \makeatletter
+\patchcmd{\tableofcontents}{\@starttoc{toc}}{\pdfbookmark[1]{目录}{anchor}\@starttoc{toc}}{}{}
 \setlength{\@fptop}{5pt}
 \setlength{\floatsep}{10pt \@plus3pt \@minus1pt}
 \setlength{\intextsep}{12pt \@plus3pt \@minus2pt}
@@ -224,6 +216,7 @@ roundcorner=6pt}
 \def\HyRef@autopageref#1{%
  \hyperref[{#1}]{[\pageref*{#1}]}%
 }
+\def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
 \makeatother
 
 \renewcommand{\equationautorefname}{式}
@@ -236,6 +229,9 @@ roundcorner=6pt}
 \newcommand{\lemmautorefname}{引理}
 \newcommand{\theorautorefname}{定理}
 \newcommand{\corolautorefname}{推论}
+
+\renewcommand{\subsectionautorefname}{第}
+\renewcommand{\thesubsection}{\arabic{subsection}节}
 
 \makeatletter
 \def\thmt@amsthmlistbreakhack{%
@@ -284,3 +280,9 @@ roundcorner=6pt}
 \numberwithin{chapter}{part}
 
 \usepackage[capitalize,nameinlink,noabbrev]{cleveref} % 这个包必须放在最后
+
+% lstlisting环境设置
+\renewcommand{\lstlistingname}{代码}
+\makeatletter
+\@addtoreset{lstlisting}{section}
+\makeatother
