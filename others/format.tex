@@ -71,6 +71,10 @@
 % 其他
 \newcommand{\entry}[2]{\section{#1}\phantomsection\label{#2}\input{./contents/#2}}% 主程序中使用，从 contents 文件夹加入词条
 \newcommand{\pentry}[1]{\begin{mdframed}\textbf{预备知识\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%预备知识的格式
+\newenvironment{issues}[1]{\begin{mdframed}\begin{itemize}#1}{\end{itemize}\end{mdframed}\vspace{-0.3cm}\par} % 词条问题框
+\newcommand{\issueNoCite}{\item 本词条需要加入参考文献}
+\newcommand{\issueDraft}{\item 本词条处于草稿阶段， 欢迎补全}
+\newcommand{\issueOther}[1]{\item #1}
 \newcommand{\rentry}[1]{\begin{mdframed}\textbf{拓展阅读\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%拓展阅读的格式
 \newcommand{\eentry}[1]{\begin{mdframed}\textbf{应用举例\ } #1 \end{mdframed}\vspace{-0.3cm}\par}%应用举例的格式
 
